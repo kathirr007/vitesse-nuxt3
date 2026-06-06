@@ -12,7 +12,8 @@
     "start": "node .output/server/index.mjs",
     "start:generate": "npx serve .output/public",
     "lint": "eslint .",
-    "typecheck": "nuxt typecheck"
+    "typecheck": "nuxt typecheck",
+    "update:catalogs": "node update-catalogs.mjs && pnpm install"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:dev",
@@ -31,11 +32,18 @@
     "eslint": "catalog:dev",
     "eslint-plugin-format": "catalog:dev",
     "nuxt": "catalog:build",
+    "package-json": "catalog:dev",
     "pinia": "catalog:frontend",
     "typescript": "catalog:dev",
     "unocss": "catalog:build",
     "vue": "catalog:frontend",
-    "vue-tsc": "catalog:dev"
+    "vue-tsc": "catalog:dev",
+    "yaml": "catalog:dev"
+  },
+  "pnpm": {
+    "overrides": {
+      "@trickfilm400/rollup-plugin-off-main-thread": "4.0.0-pre1"
+    }
   },
   "resolutions": {
     "@nuxt/devtools": "catalog:build",
